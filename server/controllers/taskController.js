@@ -225,11 +225,11 @@ const getTaskStats = async (req, res) => {
     const statsQuery = `
       SELECT 
         COUNT(*) as total_tasks,
-        COUNT(CASE WHEN status = 'pending' THEN 1 END) as pending_tasks,
-        COUNT(CASE WHEN status = 'in_progress' THEN 1 END) as in_progress_tasks,
-        COUNT(CASE WHEN status = 'completed' THEN 1 END) as completed_tasks,
+        COUNT(CASE WHEN status = 'pending' THEN 1 END) as pending,
+        COUNT(CASE WHEN status = 'in_progress' THEN 1 END) as in_progress,
+        COUNT(CASE WHEN status = 'completed' THEN 1 END) as completed,
         AVG(progress_percentage) as avg_progress,
-        COUNT(CASE WHEN due_date < CURRENT_TIMESTAMP AND status != 'completed' THEN 1 END) as overdue_tasks
+        COUNT(CASE WHEN due_date < CURRENT_TIMESTAMP AND status != 'completed' THEN 1 END) as overdue
       FROM tasks
     `;
 

@@ -104,7 +104,7 @@ const SubtaskManager = ({ taskId, onProgressUpdate }) => {
         );
         const completed = updatedSubtasks.filter(s => s.is_completed).length;
         const progress = updatedSubtasks.length > 0 ? Math.round((completed / updatedSubtasks.length) * 100) : 0;
-        onProgressUpdate(progress);
+        onProgressUpdate(taskId, progress);
       }
     } catch (error) {
       console.error('Error actualizando subtarea:', error);
@@ -124,7 +124,7 @@ const SubtaskManager = ({ taskId, onProgressUpdate }) => {
         const updatedSubtasks = subtasks.filter(subtask => subtask.id !== subtaskId);
         const completed = updatedSubtasks.filter(s => s.is_completed).length;
         const progress = updatedSubtasks.length > 0 ? Math.round((completed / updatedSubtasks.length) * 100) : 0;
-        onProgressUpdate(progress);
+        onProgressUpdate(taskId, progress);
       }
     } catch (error) {
       console.error('Error eliminando subtarea:', error);

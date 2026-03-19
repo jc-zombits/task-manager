@@ -166,6 +166,8 @@ const TaskManager = () => {
 
   // Manejar actualización de progreso desde subtareas
   const handleProgressUpdate = async (taskId, newProgress) => {
+    console.log('taskId:', taskId);
+    console.log('newProgress:', newProgress);
     try {
       await axios.put(`/api/tasks/${taskId}`, { 
         progress_percentage: newProgress 
