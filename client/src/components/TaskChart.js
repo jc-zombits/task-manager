@@ -39,17 +39,17 @@ const TaskChart = ({ tasks, statistics }) => {
       data: [
         {
           name: 'Pendientes',
-          y: statistics.pending || 0,
+          y: statistics.pending_tasks || 0,
           color: '#fa8c16'
         },
         {
           name: 'En Progreso',
-          y: statistics.in_progress || 0,
+          y: statistics.in_progress_tasks || 0,
           color: '#1890ff'
         },
         {
           name: 'Completadas',
-          y: statistics.completed || 0,
+          y: statistics.completed_tasks || 0,
           color: '#52c41a'
         }
       ]
